@@ -2,6 +2,7 @@
 layout: ../../layouts/BlogPost.astro
 title: Test
 description: This is a test
+pubDate: "Jul 15 2022"
 heroImage: https://images.unsplash.com/photo-1668613965090-167f9263906f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3269&q=80
 ---
 ## **Best City**
