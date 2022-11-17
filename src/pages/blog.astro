@@ -31,14 +31,14 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
         >
           {
             posts.map((post) => (
-              <li class=" hover:text-red-salsa">
+              <li class=" hover:text-red-salsa ">
                 <a href={post.url}>
                   <div class="text-xl tracking-wide pb-2">
                     {post.frontmatter.title}
                   </div>
                   <div />
                   <img
-                    class="md:h-96"
+                    class="md:h-96 shadow-xl rounded-lg hover:blur-[0.5px]"
                     src={post.frontmatter.heroImage}
                     alt=""
                   />
