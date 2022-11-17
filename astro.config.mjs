@@ -29,6 +29,8 @@ export default defineConfig({
             delete: true,
             fields: [
               { name: "layout", widget: "string", label: "Post Layout" },
+              { name: "pubDate", widget: "date", label: "Post Date" },
+
               { name: "title", widget: "string", label: "Post Title" },
               {
                 name: "description",
@@ -36,8 +38,9 @@ export default defineConfig({
                 label: "Post description",
               },
 
-              { name: "heroImage", widget: "image", label: "Hero Image" },
+              { name: "heroImage", widget: "image", label: "Post Image" },
               { name: "body", widget: "markdown", label: "Post Body" },
+              { name: "buyURL", widget: "string", label: "Post buyURL " },
             ],
           },
         ],

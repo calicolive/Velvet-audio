@@ -7,12 +7,14 @@ export interface Props {
   content: {
     title: string;
     description: string;
+    pubDate?: Date;
     heroImage?: string;
+    buyURL: string;
   };
 }
 
 const {
-  content: { title, description, heroImage },
+  content: { title, description, heroImage, buyURL },
 } = Astro.props;
 ---
 
@@ -24,13 +26,18 @@ const {
   <body class="min-h-screen bg-slate-100">
     <Header />
     <main>
-      <article class="p-10">
-        <h1 class="text-2xl font-bold text-slate-800 py-10">{title}</h1>
-        <p class="pb-5">{description}</p>
-        {heroImage && <img class="w-full mx-auto" src={heroImage} alt="" />}
+      <article class="p-10 mx-auto prose md:prose-xl">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {heroImage && <img class="mx-auto" src={heroImage} alt="" />}
         <slot />
+        <a
+          href={buyURL}
+          class="flex justify-center mx-auto p-2 bg-cyan-400 hover:bg-cyan-600 w-36 rounded-full text-white no-underline"
+          >Buy Now</a
+        >
       </article>
     </main>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
