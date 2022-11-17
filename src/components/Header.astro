@@ -4,20 +4,109 @@ import { SITE_TITLE } from "../config";
 ---
 
 <header>
-  <nav class="container mx-auto p-6">
+  <nav class="container mx-auto p-6 m-4">
     <div class="flex items-center justify-between space-x-20 my-6">
       <!-- Logo -->
-      <a
-        href="/"
-        class="font-bold text-3xl text-slate-800 md:text-4xl hover:text-red-salsa"
+      <a href="/" class="font-bold text-3xl md:text-4xl text-red-salsa"
         >Velvet</a
       >
-      <!-- Links -->
-      <div class="flex items-center space-x-4 uppercase md:space-x-10">
+      <!-- Menu Items -->
+      <div
+        class="hidden items-center space-x-4 uppercase md:space-x-10 md:flex"
+      >
         <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/blog">Deals</HeaderLink>
+        <HeaderLink href="/deals">Deals</HeaderLink>
+        <HeaderLink href="/freebies">Freebies</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+      </div>
+      <!-- Hamburger Menu -->
+      <button
+        id="menu-btn"
+        class="z-30 block md:hidden focus:outline-none hamburger"
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+    </div>
+
+    <div
+      id="menu"
+      class="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-24 tracking-widest uppercase opacity-90 bg-slate-100"
+    >
+      <div class="w-full py-3 text-center text-lg">
+        <HeaderLink href="/">Home</HeaderLink>
+      </div>
+      <div class="w-full py-3 text-center text-lg">
+        <HeaderLink href="/deals">Deals</HeaderLink>
+      </div>
+      <div class="w-full py-3 text-center text-lg">
+        <HeaderLink href="/freebies">Freebies</HeaderLink>
+      </div>
+      <div class="w-full py-3 text-center text-lg">
         <HeaderLink href="/about">About</HeaderLink>
       </div>
     </div>
   </nav>
 </header>
+
+<style>
+  /* hamburger menu */
+  .hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+  .open {
+    transform: rotate(90deg);
+    position: fixed;
+    top: 50px;
+    right: 25px;
+  }
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+    background-color: #ed4548;
+  }
+  .open .hamburger-middle {
+    display: none;
+  }
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    background-color: #ed4548;
+  }
+</style>
+
+<script defer>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  const logo = document.getElementById("logo");
+
+  // Hamburger button listener
+  btn.addEventListener("click", navToggle);
+
+  function navToggle() {
+    btn.classList.toggle("open");
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+  }
+</script>
