@@ -6,6 +6,11 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto, sans-serif"],
       },
+      colors: {
+        "red-salsa": "#ED4548",
+        "imperial-red": "#EB3336",
+        "corn-yellow": "##F7F06D",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

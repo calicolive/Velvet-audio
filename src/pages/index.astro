@@ -10,38 +10,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="min-h-screen bg-slate-50">
+  <body class="min-h-screen bg-slate-100">
     <Header title={SITE_TITLE} />
     <main>
       <!-- Hero -->
-      <section
-        class="flex flex-col items-center justify-center p-8 space-y-4 bg-slate-100"
-      >
+      <section class="flex flex-col items-center justify-center p-10 space-y-4">
         <!-- Hero Text -->
-        <div class="text-4xl font-bold text-center text-slate-800">
-          Stop overpaying for audio plugins!
+        <div class="text-3xl font-bold text-center text-slate-800">
+          <h1>Stop overpaying for audio plugins!</h1>
         </div>
         <div class="text-2xl text-center text-slate-800 md:m-72">
-          Get the best deals audio plugin deals delivered to your inbox every
-          week.
+          <h2>
+            Get the best deals audio plugin deals delivered to your inbox every
+            week.
+          </h2>
         </div>
-
-        <!-- Email form -->
-        <!-- <div class="p-4 m-10">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          >
-            E-mail
-          </label>
-          <div class="flex flex-col md:flex-row">
-            <input
-              class="appearance-none block w-full bg-slate-50 text-slate-700 border border-slate-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-slate-900"
-              id="email"
-              type="email"
-            />
-            <button>Sign Up</button>
-          </div>
-        </div> -->
       </section>
       <Footer />
     </main>

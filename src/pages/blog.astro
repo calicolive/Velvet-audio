@@ -20,12 +20,29 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   <body class="min-h-screen bg-slate-100">
     <Header />
     <main>
-      <section class="p-20">
-        <ul class="space-y-4 flex flex-col items-center text-lg text-slate-800">
+      <section class="p-10">
+        <div
+          class="p-4 flex items-center justify-center text-2xl font-bold md:text-4xl"
+        >
+          Latest Deals
+        </div>
+        <ul
+          class="space-y-20 flex flex-col items-center text-lg text-slate-800 mt-10"
+        >
           {
             posts.map((post) => (
-              <li class="hover:text-cyan-600">
-                <a href={post.url}>{post.frontmatter.title}</a>
+              <li class=" hover:text-red-salsa">
+                <a href={post.url}>
+                  <div class="text-xl tracking-wide pb-2">
+                    {post.frontmatter.title}
+                  </div>
+                  <div />
+                  <img
+                    class="md:h-96"
+                    src={post.frontmatter.heroImage}
+                    alt=""
+                  />
+                </a>
               </li>
             ))
           }
