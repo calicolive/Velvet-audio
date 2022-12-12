@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Freebies.astro
 pubDate: 2022-12-12T21:28:11.139Z
-title: Thru Zero E-Piano
+title: Thru Zero E-Piano for Decent Sampler
 description: E-Piano created using analog oscillators on my modular synth.
 heroImage: https://velvet-audio.b-cdn.net/Images/Thru-Zero-EP.png
 buyURL: https://velvet-audio.b-cdn.net/Thru-Zero-E-Piano.zip
