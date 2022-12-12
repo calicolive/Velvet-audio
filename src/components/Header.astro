@@ -1,50 +1,47 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../config";
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../config';
 ---
 
 <header>
-  <nav class="container mx-auto p-6 m-4">
-    <div class="flex items-center justify-between space-x-20 my-6">
+  <nav class='container mx-auto p-6'>
+    <div class='flex items-center justify-between space-x-20 my-4'>
       <!-- Logo -->
-      <a href="/" class="font-bold text-3xl md:text-4xl text-red-salsa"
+      <a href='/' class='font-bold text-3xl md:text-4xl text-red-salsa'
         >Velvet</a
       >
       <!-- Menu Items -->
       <div
-        class="hidden items-center space-x-4 uppercase md:space-x-10 md:flex"
-      >
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/deals">Deals</HeaderLink>
-        <HeaderLink href="/freebies">Freebies</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
+        class='hidden items-center space-x-4 uppercase md:space-x-10 md:flex'>
+        <HeaderLink href='/'>Home</HeaderLink>
+        <!-- <HeaderLink href='/deals'>Deals</HeaderLink> -->
+        <HeaderLink href='/freebies'>Free Samples</HeaderLink>
+        <HeaderLink href='/about'>About</HeaderLink>
       </div>
       <!-- Hamburger Menu -->
       <button
-        id="menu-btn"
-        class="z-30 block md:hidden focus:outline-none hamburger"
-      >
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
+        id='menu-btn'
+        class='z-30 block md:hidden focus:outline-none hamburger'>
+        <span class='hamburger-top'></span>
+        <span class='hamburger-middle'></span>
+        <span class='hamburger-bottom'></span>
       </button>
     </div>
 
     <div
-      id="menu"
-      class="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-24 tracking-widest uppercase opacity-90 bg-slate-100"
-    >
-      <div class="w-full py-3 text-center text-lg">
-        <HeaderLink href="/">Home</HeaderLink>
+      id='menu'
+      class='fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-24 tracking-widest uppercase opacity-90 bg-slate-100'>
+      <div class='w-full py-3 text-center text-lg'>
+        <HeaderLink href='/'>Home</HeaderLink>
       </div>
-      <div class="w-full py-3 text-center text-lg">
-        <HeaderLink href="/deals">Deals</HeaderLink>
+      <!-- <div class='w-full py-3 text-center text-lg'>
+        <HeaderLink href='/deals'>Deals</HeaderLink>
+      </div> -->
+      <div class='w-full py-3 text-center text-lg'>
+        <HeaderLink href='/freebies'>Freebies</HeaderLink>
       </div>
-      <div class="w-full py-3 text-center text-lg">
-        <HeaderLink href="/freebies">Freebies</HeaderLink>
-      </div>
-      <div class="w-full py-3 text-center text-lg">
-        <HeaderLink href="/about">About</HeaderLink>
+      <div class='w-full py-3 text-center text-lg'>
+        <HeaderLink href='/about'>About</HeaderLink>
       </div>
     </div>
   </nav>
@@ -97,16 +94,16 @@ import { SITE_TITLE } from "../config";
 </style>
 
 <script defer>
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
-  const logo = document.getElementById("logo");
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  const logo = document.getElementById('logo');
 
   // Hamburger button listener
-  btn.addEventListener("click", navToggle);
+  btn.addEventListener('click', navToggle);
 
   function navToggle() {
-    btn.classList.toggle("open");
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("flex");
+    btn.classList.toggle('open');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
   }
 </script>
